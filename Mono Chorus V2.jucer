@@ -21,13 +21,13 @@
       <FILE id="FZxCkl" name="LookAndFeel.h" compile="0" resource="0" file="../Mono Chorus V1/Source/LookAndFeel.h"/>
       <FILE id="AYJryx" name="Parameters.cpp" compile="1" resource="0" file="../Mono Chorus V1/Source/Parameters.cpp"/>
       <FILE id="C5hEqM" name="Parameters.h" compile="0" resource="0" file="../Mono Chorus V1/Source/Parameters.h"/>
-      <FILE id="gQ8RvJ" name="PluginEditor.cpp" compile="1" resource="0"
-            file="../Mono Chorus V1/Source/PluginEditor.cpp"/>
-      <FILE id="tGgbz7" name="PluginEditor.h" compile="0" resource="0" file="../Mono Chorus V1/Source/PluginEditor.h"/>
-      <FILE id="AHmW2L" name="PluginProcessor.cpp" compile="1" resource="0"
-            file="../Mono Chorus V1/Source/PluginProcessor.cpp"/>
-      <FILE id="p1bed4" name="PluginProcessor.h" compile="0" resource="0"
-            file="../Mono Chorus V1/Source/PluginProcessor.h"/>
+      <FILE id="xON48O" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="ul48nc" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="NCrDpF" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="jzKIoR" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
       <FILE id="pEIeqZ" name="RotaryKnob.cpp" compile="1" resource="0" file="../Mono Chorus V1/Source/RotaryKnob.cpp"/>
       <FILE id="ed1GGz" name="RotaryKnob.h" compile="0" resource="0" file="../Mono Chorus V1/Source/RotaryKnob.h"/>
     </GROUP>
