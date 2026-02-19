@@ -86,11 +86,6 @@ void MonoChorusV2AudioProcessorEditor::paint (juce::Graphics& g)
     g.setColour(juce::Colours::black);
     g.drawText(chorus, 48, 222, 200, 100, juce::Justification::centred);
     
-    auto fontSmall = Fonts::getFont(24.0f);
-    g.setFont(fontSmall);
-    g.setColour(juce::Colours::lightblue);
-    g.drawText("dunk", 113, 500, 70, 35, juce::Justification::centred);
-
 // LED
     auto ledOuter = juce::Rectangle<float>(getWidth()/2.0f - 6.0f, 20.0f, 12.0f, 12.0f);
     juce::Path ledPath;
@@ -128,6 +123,22 @@ void MonoChorusV2AudioProcessorEditor::paint (juce::Graphics& g)
     g.setColour(juce::Colours::darkgrey);
     g.fillRoundedRectangle(87.0f, 397.0f, 122.0f, 62.0f, 2.0f);
 
+// Logo Box
+        
+    auto logoBox = juce::Rectangle<float>(68.0f, bypassOuter.getBottom() + 22.0f, 160.0f, 40.0f);
+    juce::Path logoBoxPath;
+    logoBoxPath.addRoundedRectangle(logoBox, corner);
+    juce::DropShadow logoBoxShadow(juce::Colours::lightblue, 16, juce::Point<int>(0, 0));
+    logoBoxShadow.drawForPath(g, logoBoxPath);
+    g.setColour(juce::Colours::lightblue.withAlpha(0.05f));
+    g.fillRoundedRectangle(logoBox, 8.0f);
+        
+// Logo
+    g.setColour(juce::Colours::lightblue.withAlpha(0.95f));
+    auto logo = juce::ImageCache::getFromMemory(BinaryData::Logo_V1_png, BinaryData::Logo_V1_pngSize);
+    int logoWidth = logo.getWidth();
+    int logoHeight = logo.getHeight();
+    g.drawImage(logo, 50, 406, (logoWidth / 5.0f), (logoHeight / 5.0f), 0, 0, logo.getWidth(), logo.getHeight());
     
 }
 

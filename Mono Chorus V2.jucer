@@ -7,6 +7,7 @@
     <GROUP id="{6AB3C8C2-411B-9ABC-5C7B-B39ED8D83A0C}" name="Assets">
       <FILE id="aqAe1e" name="GoogleSansCode-Bold.ttf" compile="0" resource="1"
             file="../../../Documents/FONTS/Google_Sans_Code/static/GoogleSansCode-Bold.ttf"/>
+      <FILE id="eOhsjp" name="Logo V1.png" compile="0" resource="1" file="../../../Documents/Code/Resources/Logo V1.png"/>
     </GROUP>
     <GROUP id="{083FB04E-F770-B218-D4D4-3A2667EF2166}" name="Source">
       <FILE id="STSdOY" name="BBD.cpp" compile="1" resource="0" file="../Mono Chorus V1/Source/BBD.cpp"/>
