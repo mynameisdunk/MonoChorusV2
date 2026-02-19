@@ -88,6 +88,8 @@ private:
     
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> delayLine;
     
+    juce::dsp::DryWetMixer<float> mDryWetMixer;
+    
     juce::dsp::StateVariableTPTFilter<float> inputHighPassOne;
     float inputHPFreqOne = bucketB.getInputHighPassOne();
     

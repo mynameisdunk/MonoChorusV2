@@ -121,6 +121,9 @@ void MonoChorusV2AudioProcessor::prepareToPlay (double sampleRate, int samplesPe
     triLFO.prepare(sampleRate);
     sinLFO.reset();
     
+    mDryWetMixer.prepare(spec);
+    mDryWetMixer.setWetLatency(0.0f);
+    
 // COMPANDER
     mEnvelopeFollower.prepare(sampleRate);
     mEnvelopeFollower.reset();
@@ -170,6 +173,7 @@ bool MonoChorusV2AudioProcessor::isBusesLayoutSupported (const BusesLayout& layo
 
 void MonoChorusV2AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, [[maybe_unused]] juce::MidiBuffer& midiMessages)
 {
+    juce::dsp::AudioBlock<float> block(buffer);
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
@@ -191,6 +195,8 @@ void MonoChorusV2AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
     params.update();
     params.smoothen();
     
+    mDryWetMixer.setWetMixProportion(params.bypassed? 0.0f: 1.0f);
+    mDryWetMixer.pushDrySamples(block);
     
     inputAlias.setCutoffFrequency(aliasFreq);
     
@@ -244,19 +250,11 @@ void MonoChorusV2AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
             float mixL = dryL + (wetL * params.mix);
             float mixR = dryR + (wetR * params.mix);
             
-            if (!params.bypassed)
-            {
-                mixL = dryL;
-                mixR = dryR;
-            }
-            
             channelDataL[samp] =  mixL * params.gain;
             channelDataR[samp] =  mixR * params.gain;
-            
-            
-            
-            
         }
+    
+    mDryWetMixer.mixWetSamples(block);
 }
 
 //==============================================================================

@@ -99,7 +99,7 @@ void MonoChorusV2AudioProcessorEditor::paint (juce::Graphics& g)
     bool isOn = bypassButton.getToggleState();
     auto ledArea = juce::Rectangle<float>(getWidth()/2.0f - 6.0f, 20.0f, 12.0f, 12.0f);
     
-    g.setColour(isOn ? juce::Colours::red : juce::Colours::darkred);
+    g.setColour(isOn ? juce::Colours::darkred : juce::Colours::red);
     g.fillEllipse(ledArea);
     auto highlight = ledOuter.reduced(3);
     g.setColour(juce::Colours::white.withAlpha(0.1f));
